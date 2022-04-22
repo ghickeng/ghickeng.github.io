@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet"></head>
+
+<body>
+    <div class="wrap">
+        <!-- <img class="logo" src="../logo/logo.svg" alt="" /> -->
+				<img class="logo" src="../logo/High%20or%20Low.png" >
+        <div class="begin-btn" id="begin-btn" onclick="play()">PLAY THE GAME</div>
+        <div class="main" id="main">
+            <div class="card" id="card"></div>
+            <div class="skip">
+                <span>Guess the rank!</span>
+                <span class="skip-btn" onclick="skip()">Skip</span>
+								<span class="hint-btn" onclick="hint()">Hint</span>
+            </div>
+            <!-- <div class="hint">
+                <span>Need Some Help?</span>
+                <span class="hint-btn" onclick="hint()">Hint</span>
+            </div> -->
+            <div class="guess-btns">
+                <div class="guess-btn-item" onclick="guessClick('lower')">
+										Lower
+								</div>
+                <div class="guess-btn-item" onclick="guessClick('higher')">
+										Higher
+								</div>
+            </div>
+        </div>
+        <div class="data-board" id="data-board">
+            <div class="operation-btns">
+                <div class="operation-btn-item" onclick="restart()">
+									Restart
+								</div>
+                <div class="operation-btn-item" onclick="quit()">
+									Quit
+								</div>
+            </div>
+            <form action="" method="" class="radio">
+                <label class="radio-mid">
+                    <input class="radio_type" id="hearts" type="radio" checked onclick="checkHeart()" />Hearts Suit Only
+                </label>
+                <label class="radio-item radio-mid">
+                    <input class="radio_type" id="full" type="radio" onclick="checkFull()" />Full Deck
+                </label>
+            </form>
+            <div class="board">
+								<div class="board-inner">
+									<div class="board-inner-box board-inner-box-top">
+										<span class="board-text-right">Correct Guess:<span id="board-correct">0</span></span>
+									</div>
+									<div class="board-inner-box board-inner-box-bottom">
+										<span class="board-text-right">Score:<span id="board-score">0</span></span>
+									</div>
+								</div>
+            </div>
+						<div class="card-box">
+                            <div class = "lastScore">
+                                <!-- <ol id="bestScores">High Score is:0</ol> -->
+                                                Deck ID:
+                                                <span id="deck-id"></span>
+                            </div>
+							<div class="card-box-t">							</div>
+							<div class="card-box-m">
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+								<div class="card-box-m-item"></div>
+							</div>
+							<div class="card-box-b">
+								Card Left:
+								<span id="card-left"></span>
+							</div>
+						</div>
+        </div>
+        <div class="popup-wrap" id="popup-wrap">
+            <div class="popup">
+                <div class="pop-text"><span id="pop-text"></span></div>
+                <div class="board">
+                    <span class="board-text">
+                        Correct Guess:
+                        <span id="pop-correct">0</span>
+                    </span>
+                    <span class="board-text">
+                        Score:
+                        <span id="pop-score">0</span>
+                    </span>
+                    <div class="restart-btn" onclick="restart()">RESTART</div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-hint" id="popup-hint">
+            <div class="popup">
+                <div class="board">
+                    <span class="board-text">
+                        lower:
+                        <span id="pop-lower">0</span>%
+                    </span>
+                    <span class="board-text">
+                        higher:
+                        <span id="pop-higher">0</span>%
+                    </span>
+                    <div class="restart-btn" onclick="closeHint()">OK</div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-quit" id="popup-quit">
+            <div class="popup">
+                <div class="pop-text"><span id="pop-quit-text"></span></div>
+                <div class="board">
+                    <span class="board-text">
+                        Correct Guess:
+                        <span id="pop-quit-correct">0</span>
+                    </span>
+                    <span class="board-text">
+                        Score:
+                        <span id="pop-quit-score">0</span>
+                    </span>
+                    <div class="restart-btn" onclick="restart()">RESTART</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
